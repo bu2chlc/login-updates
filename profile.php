@@ -8,12 +8,7 @@ if(empty($_SESSION))
 {  header("Location: index.php");}
 $errors = array();
 $sent = false;
-$connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-if(mysqli_connect_errno()){
-    die("connection failed: "
-        . mysqli_connect_error()
-        . " (" . mysqli_connect_errno()
-        . ")");}
+
 // Verify session
 if ( $login->verify_session() ) {
     $user = $login->user;

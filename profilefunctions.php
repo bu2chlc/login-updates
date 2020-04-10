@@ -8,7 +8,6 @@ require_once( 'config.php' );
 
 // Process the form data
 function process_form($post) {
-
   // Validate data
   $validation = validate_data( $post );
 
