@@ -1,8 +1,5 @@
 <?php
-// Default timezone
 date_default_timezone_set('America/Los_Angeles');
-
-// Database details
 define( 'DB_USER', 'root' );
 define( 'DB_PASS', '' );
 define( 'DB_NAME', 'testdb' );
@@ -20,12 +17,8 @@ $admin_auth='adminpass';
    STUFF YOU NEED TO CHANGE FOR YOUR SPECIFIC FORM
 --------------------------------------------------------------------*/
 
-// Set the email address usage notifcations will be sent to
 $regwhitelist=  array('name', 'email', 'username', 'password');
 $userwhitelist= array('name', 'email', 'username', 'password');
 $staffwhitelist=array('name', 'email', 'username');
-// Set the subject line for email messages
 $subject = 'Login System';
-
-// Table name
 $usertable = 'users';
