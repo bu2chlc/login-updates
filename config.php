@@ -21,7 +21,7 @@ $admin_auth='adminpass';
 --------------------------------------------------------------------*/
 
 // Set the email address usage notifcations will be sent to
-$regwhitelist=  array('name', 'email', 'username', 'password', 'last_login');
+$regwhitelist=  array('name', 'email', 'username', 'password');
 $userwhitelist= array('name', 'email', 'username', 'password');
 $staffwhitelist=array('name', 'email', 'username');
 // Set the subject line for email messages

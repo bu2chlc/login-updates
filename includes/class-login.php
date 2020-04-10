@@ -1,9 +1,11 @@
 <?php
+require_once __DIR__.('/../config.php');
 class Login {
     public $user;
     public $level;
       public function __construct() {
         global $db;
+
         session_start();
         $this->db = $db;
     }
@@ -64,7 +66,9 @@ class Login {
     }
 
     public function register($post) {
-      if ($_POST["human"]=='tortoise'){
+        global $user_auth;
+        global $admin_auth;
+      if ($_POST["human"]==$user_auth || $_POST["human"]==$admin_auth){
         
       // Required fields
         $required = array( 'username', 'password', 'email' );
@@ -84,6 +88,7 @@ class Login {
         }
         
         // Create if doesn't exist
+        if($_POST["human"]==$user_auth){
         $insert = $this->db->insert('users', 
             array(
                 'username'  =>  $post['username'], 
@@ -92,7 +97,17 @@ class Login {
                 'email'     =>  $post['email'],
               'access'      => 'user',
             )
-        );
+        );} else{
+            $insert = $this->db->insert('users', 
+            array(
+                'username'  =>  $post['username'], 
+                'password'  =>  password_hash($post['password'], PASSWORD_DEFAULT),
+                'name'      =>  $post['name'],
+                'email'     =>  $post['email'],
+              'access'      => 'admin',
+            )
+        );  
+        }
         
         if ( $insert == true ) {
             return array('status'=>1,'message'=>'Account created successfully');
