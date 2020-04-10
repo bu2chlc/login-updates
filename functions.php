@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 require_once( 'config.php' );
 // Process the form data
 function process_form($post) {
- //Validate the math check
+ //Validate the auth check
 
   // Validate data
   $validation = validate_data( $post );
