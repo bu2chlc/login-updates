@@ -2,15 +2,12 @@
 // The database class
 if ( !class_exists( 'PDO_DB' ) ) {
 	class PDO_DB {
-		public function __construct($db_name, $db_user, $db_pass, $db_charset, $db_host = 'localhost') {
-			$dsn = "mysql:host=$db_host;dbname=$db_name;charset=$db_charset";
-            $options = array(
-                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-                PDO::ATTR_EMULATE_PREPARES   => false,
-            );
-            
-            $this->db = new PDO($dsn, $db_user, $db_pass, $options);
+		
+		public function __construct() {
+			global $dsn;
+			global $pdo;
+			global $options;
+            $this->db = new PDO($dsn, DB_USER, DB_PASS, $options);
 		}
 		public function query($query) {
 			$stmt = $this->db->query($query);

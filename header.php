@@ -13,7 +13,8 @@
 </head>
 
 <body>
-  <?php
+
+<?php
 date_default_timezone_set('America/Los_Angeles');
 
 // Verify session
@@ -62,6 +63,9 @@ echo"<br>";
 echo"<br>";
 echo "LOGIN: ". $user->username . ",  level: ". strtoupper($user->access);
 echo ", Last Login: " . $user->last_login;
-echo "</p>";}  ?>
+echo "</p>";}  
+
+
+?>
     
    
