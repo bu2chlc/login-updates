@@ -16,7 +16,7 @@
         <?php endif; ?>
       <div class="form-group">
          <h1 class="text-center">Login</h1>
-        <input type="text" class="form-control" name="username" placeholder="Enter username">
+        <input type="text" class="form-control" name="username" placeholder="Enter username" REQUIRED AUTOFOCUS>
       </div>
       <div class="form-group">
         <input type="password" class="form-control" name="password" placeholder="Enter password">
