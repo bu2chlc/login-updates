@@ -10,13 +10,12 @@ if ( !class_exists( 'PDO_DB' ) ) {
             $this->db = new PDO($dsn, DB_USER, DB_PASS, $options);
 		}
 		public function query($query) {
+			// $stmt = $this->db->query($query);
+			// while ( $row = $stmt->fetch() ) {
+			// 	$results[] = $row;}
+			// return $results;
 			$stmt = $this->db->query($query);
-			
-			while ( $row = $stmt->fetch() ) {
-				$results[] = $row;
-			}
-			
-			return $results;
+            return $stmt->fetchAll();
 		}
 		public function get_results($query, $params = array()) {
 			if (empty($params)) {
